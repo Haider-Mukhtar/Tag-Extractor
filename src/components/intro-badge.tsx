@@ -10,9 +10,9 @@ const IntroBadge = () => {
         "group rounded-full border border-white/50 bg-transparent text-base text-white transition-all ease-in hover:cursor-pointer",
       )}
     >
-      <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out text-white/50 hover:text-white hover:duration-300">
-        <span>✨ Introducing Magic UI</span>
-        <ArrowRight className="ml-1 size-5 transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
+      <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out text-white/90 hover:text-white hover:duration-300">
+        <span>✨ Introducing Tag Extractor</span>
+        <ArrowRight className="ml-1 size-5 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
       </AnimatedShinyText>
     </div>
   </div>

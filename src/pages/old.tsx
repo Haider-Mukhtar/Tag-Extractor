@@ -70,8 +70,6 @@ const Home = () => {
         Tags Copied!
       </div>
 
-      <NavBar />
-
       {/* Header */}
       <header className="bg-gradient-to-r from-[#FF4B6E] to-[#4B79FF] text-white shadow-lg">
         <div className="container mx-auto px-4 py-4">

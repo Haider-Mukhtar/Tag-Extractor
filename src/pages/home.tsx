@@ -4,11 +4,12 @@ import { NavBar } from '../components/navbar';
 import SEOBestPracticesCard from '../components/seo-best-practices-card';
 import StepsToUseCard from '../components/steps-to-use-card';
 import { Cover } from '../components/ui/cover';
+import URLInputSection from '../components/url-input-section';
 import WhyTagsMatterCard from '../components/why-tags-matter-card';
 
 const Home = () => {
   return (
-    <>
+    <div>
       <NavBar />
       <IntroBadge />
       {/* Main Heading */}
@@ -17,11 +18,12 @@ const Home = () => {
         <br />
         <Cover>YouTube Tag Extractor</Cover>
       </h1>
+      <URLInputSection />
       <StepsToUseCard />
       <SEOBestPracticesCard />
       <WhyTagsMatterCard />
       <Footer />
-    </>
+    </div>
   );
 };
 

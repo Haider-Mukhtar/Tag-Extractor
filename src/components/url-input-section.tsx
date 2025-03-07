@@ -2,29 +2,69 @@ import { Copy, Download, AlertCircle, Loader2, CheckCircle2 } from 'lucide-react
 import { useState } from 'react'
 
 const URLInputSection = () => {
-    const [url, setUrl] = useState('');
-    const [loading, setLoading] = useState(false);
-    const [downloading, setDownloading] = useState(false);
-    const [error, setError] = useState('');
-    const [tags, setTags] = useState<string[]>([]);
-    const [showCopyNotification, setShowCopyNotification] = useState(false);
+  const apiKey = import.meta.env.VITE_API_KEY;
+  const baseURL = import.meta.env.VITE_BASE_API_URL;
+  const [url, setUrl] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [downloading, setDownloading] = useState(false);
+  const [error, setError] = useState('');
+  const [tags, setTags] = useState<string[]>([]);
+  const [showCopyNotification, setShowCopyNotification] = useState(false);
   
+  {/* URL to VideoId */}
+  const extractVideoID = (url: string): string | null => {
+    const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+    const match = url.match(regExp);
+    return match && match[7].length === 11 ? match[7] : null;
+  };
+
+  {/* Fetch Tags */}
+  const fetchVideoTags = async (videoId: string, apiKey: string): Promise<string[] | null> => {
+    const apiUrl = `${baseURL}&id=${videoId}&key=${apiKey}`;
+    try {
+      const response = await fetch(apiUrl);
+      const data = await response.json();
+      if (data.items && data.items.length > 0) {
+        return data.items[0].snippet.tags || [];
+      } else {
+        console.error('No video found with the provided ID.');
+        return null;
+      }
+    } catch (error) {
+      console.error('Error fetching video details:', error);
+      return null;
+    }
+  };
+  
+  {/* Handle Btn Press */}
     const handleExtract = async () => {
       setLoading(true);
       setError('');
       
-      // Simulate API call
-      setTimeout(() => {
         if (!url.includes('youtube.com') && !url.includes('youtu.be')) {
           setError('Please enter a valid YouTube URL');
           setLoading(false);
           return;
         }
-        
-        // Mock tags for demonstration
-        setTags(['youtube', 'video', 'tutorial', 'technology', 'education']);
+
+      console.log(url);
+      const videoId = extractVideoID(url);
+      console.log(videoId);
+
+        if (videoId) {
+          const result = await fetchVideoTags(videoId, apiKey);
+          if (result) {
+            setTags(result);
+          } else {
+            setError('Failed to fetch tags.');
+          }
+        } else {
+          setError('Please enter a valid YouTube URL');
+          setLoading(false);
+          return;
+        }
+
         setLoading(false);
-      }, 1500);
     };
   
     const copyTags = () => {

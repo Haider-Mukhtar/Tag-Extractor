@@ -3,7 +3,7 @@ import MaxWidthWrapper from "./max-width-wrapper";
 
 const GlobalBackground = () => {
   return (
-    <div className="bg-black w-full h-screen overflow-auto px-2 md:px-10 pt-20 md:pt-24">
+    <div className="bg-[#0A0B1A] w-full h-screen overflow-auto px-2 md:px-10 pt-20 md:pt-24">
       <div className="relative h-full">
         {/* Blue blur effects */}
         <div className="bg-[#0A0B1A] w-full h-full relative overflow-hidden rounded-2xl borde">

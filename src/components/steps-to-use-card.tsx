@@ -2,7 +2,8 @@ import SpotlightCard from './ui/spot-light-card'
 
 const StepsToUseCard = () => {
   return (
-    <div className='my-10'>
+    <div className='my-10 relative'>
+                  <div className='bg-gradient-to-r from-[#0000B6]/20 via-black to-[#0000B6]/20 h-full w-full absolute top-0 left-0 rounded-3xl'/>
       <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(255, 255, 255, 0.2)">
         <h2 className='mb-8 text-xl md:text-2xl lg:text-4xl font-semibold tracking-tighter text-white text-center'>
           How to Use Tag Extractor

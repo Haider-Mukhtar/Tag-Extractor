@@ -1,4 +1,4 @@
-import { Copy, Download, AlertCircle, Loader2, CheckCircle2, TriangleAlert } from 'lucide-react';
+import { Copy, Download, AlertCircle, Loader2, CheckCircle2 } from 'lucide-react';
 import { useState } from 'react'
 
 const URLInputSection = () => {

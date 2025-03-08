@@ -1,4 +1,4 @@
-import { Copy, Download, AlertCircle, Loader2, CheckCircle2 } from 'lucide-react';
+import { Copy, Download, AlertCircle, Loader2, CheckCircle2, TriangleAlert } from 'lucide-react';
 import { useState } from 'react'
 
 const URLInputSection = () => {
@@ -47,13 +47,16 @@ const URLInputSection = () => {
           return;
         }
 
-      console.log(url);
+      // console.log(url);
       const videoId = extractVideoID(url);
-      console.log(videoId);
+      // console.log(videoId);
 
         if (videoId) {
           const result = await fetchVideoTags(videoId, apiKey);
           if (result) {
+            if (result.length === 0) {
+              setError("No Tags Found");
+            }
             setTags(result);
           } else {
             setError('Failed to fetch tags.');
@@ -62,7 +65,7 @@ const URLInputSection = () => {
           setError('Please enter a valid YouTube URL');
           setLoading(false);
           return;
-        }
+      }
 
         setLoading(false);
     };
@@ -179,8 +182,8 @@ const URLInputSection = () => {
                     </div>
                   ))}
                 </div>
-              </div>
-            )}
+        </div> 
+        )}
           </div>
   )
 }

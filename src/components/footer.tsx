@@ -22,7 +22,7 @@ const Footer = () => {
         </p>
       </div>
       {/* Links */}
-      <nav className="my-6 flex flex-wrap justify-center gap-3 md:gap-6 text-white/80">
+      <nav className="my-6 flex flex-wrap justify-center gap-3 md:gap-6 text-white/80 text-sm">
         {
           footerItems.map((item) => (
             <a key={item.id} href="#" className="hover:text-white hover:underline underline-offset-[3px]">
@@ -44,7 +44,7 @@ const Footer = () => {
         </a>
       </div>
       {/* Rights */}
-      <div className='text-white text-sm py-4'>
+      <div className='text-white text-xs py-4'>
         © {new Date().getFullYear()} TagExtractor. All rights reserved.
       </div>
     </div>

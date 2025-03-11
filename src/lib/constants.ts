@@ -12,3 +12,5 @@ export const footerItems = [
   { id: 2, name: 'Terms of Service', url: '/', },
   { id: 4, name: 'Contact', url: '/contact', },
 ]
+
+export const supportEmail = "support@yttagsextractor.com";

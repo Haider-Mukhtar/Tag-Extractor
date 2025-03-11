@@ -1,7 +1,8 @@
 import { Github, Linkedin, Twitter } from 'lucide-react';
 import LOGO from '../assets/img/youtube-logo.png';
-import { footerItems } from '../lib/constants';
 import { Link } from 'react-router';
+import PrivacyPolicy from './privacy-policy';
+import TermsOfService from './terms-of-service';
 
 const Footer = () => {
   return (
@@ -23,14 +24,12 @@ const Footer = () => {
         </p>
       </div>
       {/* Links */}
-      <nav className="my-6 flex flex-wrap justify-center gap-3 md:gap-6 text-white/80 text-sm">
-        {
-          footerItems.map((item) => (
-            <Link key={item.id} to={item.url} className="hover:text-white hover:underline underline-offset-[3px]">
-              {item.name}
-            </Link>
-          ))
-        }
+      <nav className="my-6 flex flex-wrap items-center justify-center gap-3 md:gap-6 text-white/80 text-sm">
+        <PrivacyPolicy />
+        <TermsOfService />
+        <Link to={"/contact"} className="hover:text-white hover:underline underline-offset-[3px]">
+          Contact
+        </Link>
       </nav>
       {/* Social Links */}
       <div className='my-4 flex gap-6'>

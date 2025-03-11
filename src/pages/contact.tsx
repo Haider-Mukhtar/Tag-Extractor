@@ -1,4 +1,5 @@
 import ContactForm from "../components/contact-form"
+import Footer from "../components/footer"
 import { NavBar } from "../components/navbar"
 
 const Contact = () => {
@@ -10,6 +11,7 @@ const Contact = () => {
         Contact Us
       </h1>
       <ContactForm />
+      <Footer />
     </>
   )
 }

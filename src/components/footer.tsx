@@ -1,6 +1,7 @@
 import { Github, Linkedin, Twitter } from 'lucide-react';
 import LOGO from '../assets/img/youtube-logo.png';
 import { footerItems } from '../lib/constants';
+import { Link } from 'react-router';
 
 const Footer = () => {
   return (
@@ -25,9 +26,9 @@ const Footer = () => {
       <nav className="my-6 flex flex-wrap justify-center gap-3 md:gap-6 text-white/80 text-sm">
         {
           footerItems.map((item) => (
-            <a key={item.id} href="#" className="hover:text-white hover:underline underline-offset-[3px]">
+            <Link key={item.id} to={item.url} className="hover:text-white hover:underline underline-offset-[3px]">
               {item.name}
-            </a>
+            </Link>
           ))
         }
       </nav>

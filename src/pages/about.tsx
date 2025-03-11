@@ -5,7 +5,7 @@ import WhyUseTagExtractorCard from "../components/why-use-tag-extractor-card"
 
 const About = () => {
   return (
-    <div>
+    <>
       <NavBar />
       {/* Heading */}
       <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter text-white text-center my-10">
@@ -43,7 +43,7 @@ const About = () => {
       </SpotlightCard>
       {/* Footer */}
       <Footer />
-    </div>
+    </>
   )
 }
 

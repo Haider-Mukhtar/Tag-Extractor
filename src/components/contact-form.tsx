@@ -50,7 +50,7 @@ const ContactForm = () => {
   };
 
   return (
-    <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(255, 255, 255, 0.2)">
+    <SpotlightCard className="custom-spotlight-card mb-8" spotlightColor="rgba(255, 255, 255, 0.2)">
       <div className="lg:grid grid-cols-3">
         {/* Text Content */}
         <div className="text-base md:text-lg text-white space-y-4 mb-6 lg:my-auto">

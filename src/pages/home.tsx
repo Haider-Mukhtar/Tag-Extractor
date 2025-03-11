@@ -9,7 +9,7 @@ import WhyTagsMatterCard from '../components/why-tags-matter-card';
 
 const Home = () => {
   return (
-    <div>
+    <>
       <NavBar />
       <IntroBadge />
       {/* Main Heading */}
@@ -23,7 +23,7 @@ const Home = () => {
       <SEOBestPracticesCard />
       <WhyTagsMatterCard />
       <Footer />
-    </div>
+    </>
   );
 };
 

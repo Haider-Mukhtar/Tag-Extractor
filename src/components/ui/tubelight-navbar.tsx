@@ -2,54 +2,48 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { LucideIcon } from "lucide-react";
 import { cn } from "../../lib/utils";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 
 interface NavItem {
-  name: string
-  url: string
-  icon: LucideIcon
+  name: string;
+  url: string;
+  icon: LucideIcon;
 }
 
 interface NavBarProps {
-  items: NavItem[]
-  className?: string
+  items: NavItem[];
+  className?: string;
 }
 
 export function TubeLightNavBar({ items, className }: NavBarProps) {
-  const [activeTab, setActiveTab] = useState(items[0].name)
-  const [isMobile, setIsMobile] = useState(false)
+  const location = useLocation(); // Get current URL
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
+      setIsMobile(window.innerWidth < 768);
+    };
 
-    handleResize()
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
-    <div
-      className={cn(
-        "fixed top-0 left-1/2 -translate-x-1/2 z-50 mb-6 md:pt-6 pt-4",
-        className,
-      )}
-    >
+    <div className={cn("fixed top-0 left-1/2 -translate-x-1/2 z-50 mb-6 md:pt-6 pt-4", className)}>
       <div className="flex items-center gap-3 border border-gray-600 backdrop-blur-lg py-1.5 px-1.5 rounded-xl shadow-lg">
         {items.map((item) => {
-          const Icon = item.icon
-          const isActive = activeTab === item.name
+          const Icon = item.icon;
+          const isActive = location.pathname === item.url; // Check URL match
 
           return (
             <Link
               key={item.name}
               to={item.url}
-              onClick={() => setActiveTab(item.name)}
               className={cn(
                 "relative cursor-pointer text-base font-semibold px-6 py-2 rounded-xl transition-colors",
                 "text-white/80 hover:text-white",
-                isActive && "bg-muted text-white",
+                isActive && "bg-muted text-white"
               )}
             >
               <span className="hidden md:inline">{item.name}</span>
@@ -75,9 +69,9 @@ export function TubeLightNavBar({ items, className }: NavBarProps) {
                 </motion.div>
               )}
             </Link>
-          )
+          );
         })}
       </div>
     </div>
-  )
+  );
 }

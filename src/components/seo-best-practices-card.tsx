@@ -21,7 +21,7 @@ const SEOBestPracticesCard = () => {
         <h2 className='mb-8 text-xl md:text-2xl lg:text-4xl font-semibold tracking-tighter text-white text-center'>
           YouTube SEO Best Practices
         </h2>
-        <p className='mb-8 text-base lg:text-lg tracking-tighter text-white text-center'>
+        <p className='mb-8 text-base lg:text-lg text-white text-center'>
           Tags are essential for improving your video’s visibility and reaching the right audience.
           <br />
           Follow these best practices to optimize your tags effectively:

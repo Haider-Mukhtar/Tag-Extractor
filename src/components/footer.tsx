@@ -37,7 +37,7 @@ const Footer = () => {
         <a href='#' className='rounded-xl border border-white/10 hover:border-white/50 text-white bg-white/20 backdrop-blur-lg aspect-square w-12 flex justify-center items-center hover:scale-105 duration-300 drop-shadow-2xl shadow-blue-500'>
           <Twitter className='size-5' />
         </a>
-        <a href='https://github.com/Haider-Mukhtar/Tag-Extractor' target='_blank' className='rounded-xl border border-white/10 hover:border-white/50 text-white bg-white/20 backdrop-blur-lg aspect-square w-12 flex justify-center items-center hover:scale-105 duration-300 drop-shadow-2xl shadow-blue-500'>
+        <a href='#' target='_blank' className='rounded-xl border border-white/10 hover:border-white/50 text-white bg-white/20 backdrop-blur-lg aspect-square w-12 flex justify-center items-center hover:scale-105 duration-300 drop-shadow-2xl shadow-blue-500'>
           <Github className='size-5' />
         </a>
         <a href='#' className='rounded-xl border border-white/10 hover:border-white/50 text-white bg-white/20 backdrop-blur-lg aspect-square w-12 flex justify-center items-center hover:scale-105 duration-300'>
